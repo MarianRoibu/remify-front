@@ -1,0 +1,16 @@
+
+// export * from './Profile/Profile'
+// export * from './Settings/Settings'
+// export * from './Connections/Connections'
+// export * from './Library/Library'
+// export * from './Upload/Upload'
+// export * from './Search/Search'
+// export * from './SearchResults/SearchResults'
+// export * from './UserEdit/UserEdit'
+
+export * from './Login/Login'
+export * from './Home/HomePage'
+export * from './Test/TestPage'
+export * from './Register/Register'
+export * from './Upload/upload'
+// export * from './Register/Register'
