@@ -12,7 +12,7 @@ function Register() {
   
     const [error, setError] = useState({ status: "unset", msg: "" });
   
-    const [isArtist, setIsArtist] = useState(false);
+    
   
     const [userData, setUserData] = useState({
       name: user?.name || "",
@@ -40,11 +40,6 @@ function Register() {
     const handleSubmit = async (ev) => {
       ev.preventDefault();
   
-      isArtist &&
-        setUserData({
-          ...userData,
-          role: 2
-        });
   
       const token = await getAccessTokenSilently();
   
@@ -52,7 +47,7 @@ function Register() {
   
       console.log(createUser);
   
-      if (!createUser.status) {
+      if (createUser.status) {
         setError(createUser);
         return;
       }
@@ -81,25 +76,6 @@ function Register() {
               onChange={(ev) => handleUsername(ev)}
               required
             />
-          </div>
-          <div className="container-inputs">
-            <label htmlFor="isArtist">Are you an artist?</label>
-            <div className="container-buttons-artist">
-              <button
-                className={isArtist ? "active" : ""}
-                type="button"
-                onClick={() => setIsArtist(true)}
-              >
-                Yes
-              </button>
-              <button
-                className={!isArtist ? "active" : ""}
-                type="button"
-                onClick={() => setIsArtist(false)}
-              >
-                No
-              </button>
-            </div>
           </div>
           {!error.status && <p className="error-message">{error.msg}</p>}
           <span className="privacy-policy-span">

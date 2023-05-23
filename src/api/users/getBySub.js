@@ -7,7 +7,7 @@ const getUserBySub = async (token) =>{
             }
         })
         const response =await request.json()
-        
+        console.log(response);
         return response
     } catch (error) {
         return {msg: error.message}

@@ -13,7 +13,6 @@ const postUser = async (data, token) => {
     formData.append('img', data.picture);
     formData.append('sub', data.sub);
     formData.append("username", data.username)
-    formData.append("genres", data.genres)
     try {
         const request = await fetch(`${process.env.REACT_APP_API_URL}/users/create`, {
             method: "POST",
