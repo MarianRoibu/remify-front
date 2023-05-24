@@ -4,20 +4,14 @@ export const colors = {
   "white": "#FCFDFF",
   "black": "#010A13",
   "grey": "#888D93",
-  "dark-blue": "#0A1428",
-  "blue": "#3B46F1"
+  "dark-blue": "#1a2639",
+  "blue": "#113f67"
 }
 
 export const fontSize = {
   "span": "15px",
   "p": "20px"
 }
-
-// export const device = {
-//   "desktop": `(min-width: 1024px)`,
-//   "tablet": `(min-width: 480px)`,
-//   "mobile": `(max-width: 480px)`
-// }
 
 export const GlobalStyle = createGlobalStyle`
   * {

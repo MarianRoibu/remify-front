@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { TestPage, Login, HomePage, Register, ImageUploadForm } from "../UI/pages/users";
+import { TestPage, Login, HomePage, Register, ImageUploadForm, ProfilePage,ImagePage, GifPage} from "../UI/pages/users";
 import PrivateRoutes from "./RouteTypes";
 
 
@@ -11,11 +11,20 @@ const router = createBrowserRouter([
     {
       path: '/register',
       element: <Register />
+    },    
+    {
+      path: '/imagefull/:id',
+      element: <ImagePage />
+    },
+    {
+      path: '/giffull/:id',
+      element: <GifPage />
     },
     {
       path: '/',
-      element: <PrivateRoutes><HomePage /></PrivateRoutes>
+      element: <HomePage />
     },
+
     {
       path: '/test',
       element: <PrivateRoutes><TestPage /></PrivateRoutes>
@@ -23,6 +32,10 @@ const router = createBrowserRouter([
     {
       path: '/upload',
       element: <PrivateRoutes><ImageUploadForm /></PrivateRoutes>
+    },
+    {
+      path: '/profile',
+      element: <PrivateRoutes><ProfilePage /></PrivateRoutes>
     },
   ]);
   
