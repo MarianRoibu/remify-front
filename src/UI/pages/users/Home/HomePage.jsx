@@ -1,7 +1,5 @@
 import React from "react"
-import { Logout } from "../../../components/navBar.jsx/components/Logout"
 import ImageGallery from "./components/images"
-import UploadButton from "./components/uploadButton"
 import GifGallery from "./components/gifs"
 import Navbar from "../../../components/navBar.jsx/NavBar"
 import { useNavigate } from "react-router-dom"
