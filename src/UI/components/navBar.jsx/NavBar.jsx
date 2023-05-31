@@ -93,7 +93,6 @@ const Navbar = () => {
         {!isAuthenticated ? (
           <AuthButtons>
             <Button onClick={loginWithRedirect}>Login</Button>
-            <Button onClick={loginWithRedirect}>Register</Button>
           </AuthButtons>
         ) : (
             <>    
