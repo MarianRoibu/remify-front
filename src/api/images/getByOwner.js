@@ -7,7 +7,7 @@ const getImageByOwner = async (ownerId, token) => {
       });
       const response = await request.json();
   console.log('this is the data', response.data);
-      return response.data; // Return the 'data' property of the response
+      return response.data; 
     } catch (error) {
       return { msg: error.message };
     }

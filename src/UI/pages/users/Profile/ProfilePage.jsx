@@ -2,9 +2,7 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector } from "react-redux";
-import { store } from "../../../../utils/store";
 import Navbar from "../../../components/navBar.jsx/NavBar";
-import getImageByOwner from "../../../../api/images/getByOwner";
 import fetchManyImageById from "../../../../api/images/getMayById";
 import fetchManyGifById from "../../../../api/gifs/getManygifById";
 import { NavLink } from "react-router-dom";
@@ -55,7 +53,7 @@ const GifItem = styled.img`
 `;
 
 const ProfilePage = () => {
-  const { isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently } = useAuth0();
   const [images, setImages] = useState([]);
   const [gifs, setGifs] = useState([]);
   const user = useSelector((state) => state.user.data);

@@ -68,7 +68,6 @@ export function GifPage() {
         } else {
           // Fallback for browsers that don't support the Web Share API
           const shareUrl = window.location.href;
-          const shareTitle = gif.title;
           
           if (navigator.clipboard) {
             navigator.clipboard

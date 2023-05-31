@@ -50,7 +50,7 @@ const PrivateRoutes = ({ children }) => {
                     children
 
                     :
-                    navigate('/login')
+                    navigate('/')
             )
     )
 }

@@ -68,7 +68,6 @@ export function ImagePage() {
         } else {
           // Fallback for browsers that don't support the Web Share API
           const shareUrl = window.location.href;
-          const shareTitle = image.title;
           
           if (navigator.clipboard) {
             navigator.clipboard

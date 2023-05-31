@@ -31,6 +31,8 @@ const Image = styled.img`
 function ImageGallery() {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { isAuthenticated } = useAuth0();
+
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -56,12 +58,21 @@ function ImageGallery() {
       <GalleryContainer>
         {images.map((image) => (
         <div>
-          <NavLink to={`/imagefull/${image._id}`}>
+                  {!isAuthenticated ? (
+          <ImageContainer key={image._id}>
+          <Image src={image.img.secure_url} alt={image.title} />
+          </ImageContainer>
+        
+         
+         ) : (
+            
+                      <NavLink to={`/imagefull/${image._id}`}>
           <ImageContainer key={image._id}>
           <Image src={image.img.secure_url} alt={image.title} />
           </ImageContainer>
           </NavLink>
-
+          
+         )}
           <p>{image.title}</p>
           <p>{image.artist}</p>
           </div>

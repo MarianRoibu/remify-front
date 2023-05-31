@@ -32,6 +32,8 @@ const Gif = styled.img`
 function GifGallery() {
   const [gifs, setGifs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const {  isAuthenticated } = useAuth0();
+
 
   useEffect(() => {
     const fetchGifs = async () => {
@@ -56,11 +58,22 @@ function GifGallery() {
         <GalleryContainer>
           {gifs.map((gif) => (
             <div>
-            <NavLink to={`/giffull/${gif._id}`}>
+                      {!isAuthenticated ? (
             <GifContainer key={gif._id}>
               <Gif src={gif.gif.secure_url} alt={gif.title} />
             </GifContainer>
-            </NavLink>
+         
+         ) : (
+          <NavLink to={`/giffull/${gif._id}`}>
+          <GifContainer key={gif._id}>
+            <Gif src={gif.gif.secure_url} alt={gif.title} />
+          </GifContainer>
+          </NavLink>
+            
+          
+         )}
+
+
             <p>{gif.title}</p>
             <p>{gif.artist}</p>
             </div>

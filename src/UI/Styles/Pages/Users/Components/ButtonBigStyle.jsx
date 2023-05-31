@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { colors, device } from "../../../config";
+import { colors } from "../../../config";
 
 export const ButtonElement = styled.button`
 background-color: ${colors.blue};
-width: 80%;
+width: 10%;
 border: 0;
 border-radius: 5px;
 font-size: 1.5rem;
