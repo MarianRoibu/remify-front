@@ -9,6 +9,7 @@ const GifPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 15vh;
 `;
 
 const GifTitle = styled.h2`

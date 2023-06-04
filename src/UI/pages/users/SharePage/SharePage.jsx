@@ -9,6 +9,7 @@ const ImagePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 15vh;
 `;
 
 const ImageTitle = styled.h2`

@@ -27,24 +27,30 @@ const NavLinks = styled.ul`
   display: flex;
   list-style: none;
   justify-content: space-between;
-  margin-top: 1vh;
-  & > :first-child {
-    margin-right: 2vh;
-}
+  margin-top: 0vh;
+  @media (max-width: 768px) {
+    margin-top: 5vh;
+    & > :first-child {
+      margin-right: -15vh;
+    }
+  }
 
   & > :last-child {
     margin-top: 0.2vh;
     margin-right: 2vh;
-    
   }
 `;
 
 const NavLink = styled.li`
-    
-    font-size: 2rem;
-    margin-right: 2vh;
+  font-size: 2rem;
+  margin-right: 2vh;
+
   &:first-child {
-    margin-right: 20vh;
+    margin-right: -20vh;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+    }
   }
 
   a {
@@ -73,6 +79,18 @@ const Button = styled.button`
   }
 `;
 
+const Search = styled.div`
+  position: relative;
+  margin-top: 0vh;
+  left: -10vh;
+
+  @media (max-width: 768px) {
+    margin-top: 12vh;
+    margin-left: 1vh;
+
+  }
+`;
+
 const AuthButtons = styled.div`
   display: flex;
 `;
@@ -87,9 +105,9 @@ const Navbar = () => {
     <NavbarContainer>
       <Logo href="/">Remify</Logo>
       <NavLinks>
-      <NavLink>
-           <SearchBar />
-           </NavLink>  
+      <Search>
+      <SearchBar />
+      </Search>
         {!isAuthenticated ? (
           <AuthButtons>
             <Button onClick={loginWithRedirect}>Login</Button>
