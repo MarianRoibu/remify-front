@@ -74,11 +74,15 @@ const Button = styled.button`
   cursor: pointer;
   transition: background-color 0.3s ease;
 
+  @media (max-width: 480px) {
+    max-height: 5vh;
+    margin-right: 7.4vh;
+  }
+
   &:hover {
     background-color: #0056b3;
   }
 `;
-
 const Search = styled.div`
   position: relative;
   margin-top: 0vh;
